@@ -1,0 +1,9 @@
+*.qdrep
+*.sqlite
+*.ncu-rep
+*.exe
+cub/
+bin/
+obj/
+test/ssb/data
+test/bench/data
