@@ -11,7 +11,7 @@ int main() {
 	CUdevice device;
 	cuDeviceGet(&device, 0);
 
-	bool verbose = 0;
+	bool verbose = 1;
 
 	srand(123);
 
@@ -43,19 +43,9 @@ int main() {
 	double malloc_time_total1 = 0, execution_time1 = 0, optimization_time1 = 0, merging_time1 = 0;
 	double malloc_time_total2 = 0, execution_time2 = 0, optimization_time2 = 0, merging_time2 = 0;
 	Distribution dist = None;
-	// string dist_string;
-	// if (dist == Norm) dist_string = "Norm";
-	// else if (dist == None) dist_string = "None";
-	// else if (dist == Zipf) dist_string = "Zipf";
 	double mean = 1;
 
 	qp = new QueryProcessing(cgp, verbose, dist);
-
-	// if (dist == Zipf) {
-	// 	qp->qo->setDistributionZipfian(alpha);
-	// } else if (dist == Norm) {
-	// 	qp->qo->setDistributionNormal(mean, 0.5);
-	// }
 
 	while (!exit) {
 		cout << "Select Options:" << endl;
@@ -226,15 +216,6 @@ int main() {
 				if (repl_policy == Segmented || repl_policy == LFUSegmented) cgp->cm->newEpoch(0.5);
 				if (repl_policy == LRU2Segmented) cgp->cm->newEpoch(2.0);
 
-				// if (dist == Norm) {
-				// 	time = 0; execution_time = 0; optimization_time = 0; merging_time = 0;
-				// 	if ((iter + 1) % 5 == 0) {
-				// 		if (iter == 4) mean = 4;
-				// 		else if (iter == 9) mean = 2;
-				// 		else if (iter == 14) mean = 5;
-				// 		qp->qo->setDistributionNormal(mean, 0.5);
-				// 	}
-				// }
 
 			}
 
@@ -301,11 +282,7 @@ int main() {
 
 		cout << endl;
 		cout << "Cumulated Time: " << time << endl;
-		cout << "CPU to GPU traffic: " << cpu_to_gpu  << endl;
-		cout << "GPU to CPU traffic: " << gpu_to_cpu  << endl;
-		cout << "Malloc time: " << malloc_time_total << endl;
 		cout << "Execution time: " << execution_time << endl;
-		cout << "Merging time: " << merging_time << endl;
 		cout << endl;
 
 	}

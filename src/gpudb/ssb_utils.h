@@ -12,7 +12,7 @@
 
 using namespace std;
 
-#define SF 1
+#define SF 40
 
 #define BASE_PATH "/home/ubuntu/Mordred/test/ssb/data/"
 
