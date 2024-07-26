@@ -67,10 +67,10 @@ make sort
 
 * Configure the benchmark settings
 ```
-# Edit SF and BASE_PATH in src/ssb/ssb_utils.h
-# Edit SF and BASE_PATH in src/ssb/common.h
-# Edit file path in src/ssb/minmax.cpp and src/ssb/minmaxsort.cpp
-# Edit SF and table size in minmax.sh
+# Edit SF and BASE_PATH in src/gpudb/ssb_utils.h
+# Edit SF and BASE_PATH in src/gpudb/common.h
+# Edit file path in src/gpudb/minmax.cpp and src/gpudb/minmaxsort.cpp
+# Edit SF and table size in minmax.sh (following the size in src/gpudb/ssb_utils.h)
 ```
 
 * To compile and run Mordred
