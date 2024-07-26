@@ -82,3 +82,23 @@ make bin/gpudb/minmaxsort
 make bin/gpudb/main
 ./bin/gpudb/main
 ```
+
+When you run Mordred, you would be given the following options:
+```
+Select Options:
+1. Run Specific Query
+2. Run Random Queries
+3. Run Experiment
+4. Replacement
+5. Dump Trace
+6. Exit
+cache. Cache Specific Column
+clear. Delete Columns from GPU
+custom. Toggle custom malloc
+skipping. Toggle segment skipping
+```
+**Mordred do not cache the data by default**
+To populate the cache, select option (2), run 100 random queries (for warm-up), and then select option (4) to populate the cache. 
+In option (4), you can input the caching policies from the following options: (1)LFU, (2)LRU, (3)LRU2, (4)LFUSegmented, (5)LRUSegmented, (6)LRU2Segmented, and (7)SemanticAware.
+SemanticAware is the novel caching policy introduced in our paper. See Figure 7 in our paper to understand the difference between each policies.
+To run individual query, select option (1) and input the ssb query (e.g. input '21' to run q2.1 in SSB).
